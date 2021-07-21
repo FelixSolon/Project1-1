@@ -7,7 +7,7 @@ As a class project, we are going to create an application that randomly produces
 
 ## USER STORY
 
-As as someone who has issues deciding where to eat at nearly every meal time, I want an app that can produce a randomly chosen restaurant based off my input criteria and current location.
+As as someone who has issues deciding where to eat at nearly every meal time, I want an app that can produce a randomly chosen restaurant based off my input criteria and current location. The app will be viewable across multiple devices.
 
 
 ## ACCEPTANCE CRITERIA
@@ -15,10 +15,16 @@ As as someone who has issues deciding where to eat at nearly every meal time, I 
 ```
 When I open the application
 Then I can input my zip code
-When I input my zip code
-Then I am given a series of questions with multiple choice answers for restaurant criteria including the option for none of the above
+When I submit my zip code
+Then the input value is locally stored 
+When my zip code is stored
+Then my current city is displayed at the top of the page
+When my city is displayed
+Then I am given a series of questions with multiple choice answers for restaurant criteria including the option for none of the these
 When I am finished answering a question
 Then I am shown the next question
+When I submit each answer answer
+Then a message displays my selection
 When I am finished answering all the questions
 Then I am given the name of a random restaurant based off of the above criteria
 ```
