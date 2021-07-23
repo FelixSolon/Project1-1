@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link src="script.js">
     <title>Honey, you pick?</title>
 </head>
 <body>
-    
-</body>
+    <script>
+        fetch("https://api.documenu.com/v2/restaurants/zip_code/90210?size=30&cuisine=Italian&top_cuisines=true&page=2", {
+            "method": "GET",
+            "headers": {
+                "x-api-key": "fe622a5ac3aa4f64e60a0ab9c844306d",
+                "x-rapidapi-host": "documenu.p.rapidapi.com"
+            }
+        })
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+        // fetch(`https://api.documenu.com/v2/restaurant/4072702673999819?key=fe622a5ac3aa4f64e60a0ab9c844306d`)
+        // .then(function(response){
+        //     return response.json();
+        // })
+        // .then(function(response) {
+        //     console.log(response);
+        // })
+        if ('geolocation' in navigator) {
+        console.log('geolocation available');
+        navigator.geolocation.getCurrentPosition(position => {
+            console.log(position.coords);
+        });
+        } else {
+            console.log('geolocation not available');
+        }
+    </script>
+    </body>
 </html>
