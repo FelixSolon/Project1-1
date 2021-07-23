@@ -7,6 +7,7 @@
     <title>Honey, you pick?</title>
 </head>
 <body>
+    <div id="info"></div>
     <script>
         fetch("https://api.documenu.com/v2/restaurants/zip_code/90210?size=30&cuisine=Italian&top_cuisines=true&page=2", {
             "method": "GET",
@@ -18,8 +19,13 @@
         .then(response => {
             return response.json()
         })
-        .then(data => {
-            console.log(data);
+        .then(response => {
+            console.log(response.data);
+            var infoContainer = document.querySelector('#info');
+           infoContainer.innerHTML = '';
+           var infoText = document.createElement('p');
+           infoText.innerText = response.data[0].cuisine;
+           infoContainer.appendChild(infoText);
         })
         .catch(err => {
             console.error(err);
