@@ -10,12 +10,13 @@
     <p>
         Restaurant Name: <span id="name"></span><br/>
         Restaurant Zip Code: <span id="address"></span><br/>
-        Restaurant Menu Items: <span id="menu"></span>
+        Restaurant Cuisine: <span id="sine"></span>
+        <!-- Restaurant Menu Items: <span id="menu"></span> -->
     </p>
     <script>
         // Have a function that compares key words to items in the menu arrays
         // API for restuarants and menus by zip code
-        const api_url = "https://api.documenu.com/v2/restaurants/search/fields?zip_code=90210&fullmenu";
+        const api_url = "https://api.documenu.com/v2/restaurants/zip_code/33773?size=20&fullmenu=true&top_cuisines=false&key=fe622a5ac3aa4f64e60a0ab9c844306d";
         async function getData() {
             const response = await fetch(api_url, {
                 "method": "GET",
@@ -31,17 +32,20 @@
             const restName = totalRestaurants.data[1].restaurant_name;
             console.log(restName);
             // zip code is postal_code for restaurant data
-            const restAddress = totalRestaurants.data[1].address;
+            const restAddress = totalRestaurants.data[1].address.formatted;
             console.log(restAddress);
-            const restZipCode = totalRestaurants.data[1].address.postal_code;
-            console.log(restZipCode);
+            // const restZipCode = totalRestaurants.data[1].address.postal_code;
+            // console.log(restZipCode);
             const restMenu = totalRestaurants.data[1].menus;
             console.log(restMenu);
-            const menuItems = totalRestaurants.data[1].menus[0].menu_sections[0];
-            console.log(menuItems);
+            const restCuisine = totalRestaurants.data[1].cuisines;
+            console.log(restCuisine);
+            // const menuItems = totalRestaurants.data[1].menus[0].menu_sections[0];
+            // console.log(menuItems);
 
             document.querySelector('#name').innerHTML = restName;
-            document.querySelector('#address').innerHTML = restZipCode;
+            document.querySelector('#address').innerHTML = restAddress;
+            document.querySelector('#sine').innerHTML = restCuisine;
             // document.querySelector('#menu').innerHTML = menuItems;
         }
         
