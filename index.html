@@ -7,12 +7,14 @@
     <title>Honey, you pick?</title>
 </head>
 <body>
-    <!-- <div id="info"></div> -->
     <p>
-        cuisine: <span id="sine"></span>;
-        matching_docs: <span id="docs"></span>;
+        Restaurant Name: <span id="name"></span><br/>
+        Restaurant Zip Code: <span id="address"></span><br/>
+        Restaurant Menu Items: <span id="menu"></span>
     </p>
     <script>
+        // Have a function that compares key words to items in the menu arrays
+        // API for restuarants and menus by zip code
         const api_url = "https://api.documenu.com/v2/restaurants/search/fields?zip_code=90210&fullmenu";
         async function getData() {
             const response = await fetch(api_url, {
@@ -26,11 +28,21 @@
             
             const totalRestaurants = await response.json();
             console.log(totalRestaurants);
-            // const getCuisine = totalRestaurants.data[0].cuisine;
-            
-            // const {cuisine, matching_docs} = data;
-            // console.log(getCuisine);
-            // console.log(matching_docs);
+            const restName = totalRestaurants.data[1].restaurant_name;
+            console.log(restName);
+            // zip code is postal_code for restaurant data
+            const restAddress = totalRestaurants.data[1].address;
+            console.log(restAddress);
+            const restZipCode = totalRestaurants.data[1].address.postal_code;
+            console.log(restZipCode);
+            const restMenu = totalRestaurants.data[1].menus;
+            console.log(restMenu);
+            const menuItems = totalRestaurants.data[1].menus[0].menu_sections[0];
+            console.log(menuItems);
+
+            document.querySelector('#name').innerHTML = restName;
+            document.querySelector('#address').innerHTML = restZipCode;
+            // document.querySelector('#menu').innerHTML = menuItems;
         }
         
         getData();        
