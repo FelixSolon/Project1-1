@@ -7,44 +7,43 @@
     <title>Honey, you pick?</title>
 </head>
 <body>
-    <div id="info"></div>
+    <!-- <div id="info"></div> -->
+    <p>
+        cuisine: <span id="sine"></span>;
+        matching_docs: <span id="docs"></span>;
+    </p>
     <script>
-        fetch("https://api.documenu.com/v2/restaurants/zip_code/90210?size=30&cuisine=Italian&top_cuisines=true&page=2", {
-            "method": "GET",
-            "headers": {
-                "x-api-key": "fe622a5ac3aa4f64e60a0ab9c844306d",
-                "x-rapidapi-host": "documenu.p.rapidapi.com"
-            }
-        })
-        .then(response => {
-            return response.json()
-        })
-        .then(response => {
-            console.log(response.data);
-            var infoContainer = document.querySelector('#info');
-           infoContainer.innerHTML = '';
-           var infoText = document.createElement('p');
-           infoText.innerText = response.data[0].cuisine;
-           infoContainer.appendChild(infoText);
-        })
-        .catch(err => {
-            console.error(err);
-        });
-        // fetch(`https://api.documenu.com/v2/restaurant/4072702673999819?key=fe622a5ac3aa4f64e60a0ab9c844306d`)
-        // .then(function(response){
-        //     return response.json();
-        // })
-        // .then(function(response) {
-        //     console.log(response);
-        // })
-        if ('geolocation' in navigator) {
-        console.log('geolocation available');
-        navigator.geolocation.getCurrentPosition(position => {
-            console.log(position.coords);
-        });
-        } else {
-            console.log('geolocation not available');
+        const api_url = "https://api.documenu.com/v2/restaurants/search/fields?zip_code=90210&fullmenu";
+        async function getData() {
+            const response = await fetch(api_url, {
+                "method": "GET",
+                "headers": {
+                    "x-api-key": "fe622a5ac3aa4f64e60a0ab9c844306d",
+                    "x-rapidapi-host": "documenu.p.rapidapi.com"
+                }
+            });
+            console.log(response);
+            
+            const totalRestaurants = await response.json();
+            console.log(totalRestaurants);
+            // const getCuisine = totalRestaurants.data[0].cuisine;
+            
+            // const {cuisine, matching_docs} = data;
+            // console.log(getCuisine);
+            // console.log(matching_docs);
         }
+        
+        getData();        
+        
+        // Use to get current location
+        // if ('geolocation' in navigator) {
+        // console.log('geolocation available');
+        // navigator.geolocation.getCurrentPosition(position => {
+        //     console.log(position.coords);
+        // });
+        // } else {
+        //     console.log('geolocation not available');
+        // }
     </script>
     </body>
 </html>
