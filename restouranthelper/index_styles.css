@@ -1,0 +1,260 @@
+	body
+	{
+	/*background-image: url();*/
+	}
+	
+	h1{
+	font-size:4em;
+	}
+	
+	h2{
+	font-size:4em; 
+	font-weight:100;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	}
+	
+	h3{
+	font-family: 'Raleway';
+	font-size:1.5em;
+	font-weight:100;
+	}
+	
+	#title {
+	font-family: 'Droid Sans', sans-serif;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	}
+	
+	p {
+	font-size:.9em; 
+	line-height:140%;
+	}
+	
+	#fullbody {
+	font-family: 'Raleway';
+	font-size:100%;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	text-align: center;
+	}
+	
+	#body_left {
+	position:relative;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	float:left;
+	}
+	
+	#body_right {
+	position:relative;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: right;
+	float:right;
+	}
+	
+	#body_bottom {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+	#locBoxDirections {
+	font-family: 'Raleway';
+	font-size:1.5em;
+	font-weight:100;
+	}
+	
+	#locationInput {
+    border: 1px solid #d1d1d1;
+    font: 38px Droid Sans;
+    color: #bebebe;
+    width: 300px;
+    padding: 6px 15px 6px 15px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 5px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    }
+
+	#locationInput:focus {
+    width: 300px;
+    }
+	
+	.button, #goButton {
+	display: inline-block;
+	border: 1px solid #d1d1d1;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+	font: bold 40px Raleway;
+	padding: 0.1em 0.2em 0.15em;
+    text-shadow: 0 5px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset, 5px 5px 3px #888;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset, 5px 5px 3px #888;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset, 5px 5px 3px #888;
+	background: #fff; /* for non-css3 browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#bbb)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #fff,  #bbb); /* for firefox 3.6+ */
+	background: -o-linear-gradient(top, #fff, #bbb); /* for opera */
+	}
+	
+	.button:hover, #goButton:hover {
+	background: #bbb; /* for non-css3 browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#999)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #fff,  #999); /* for firefox 3.6+ */
+	background: -o-linear-gradient(top,  #fff,  #999); /* for opera */
+	}
+
+	.button:active {
+	position: relative;
+	top: 5px;
+	left: 5px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    background: #999; /* for non-css3 browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#fff)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #bbb,  #fff); /* for firefox 3.6+ */
+	background: -o-linear-gradient(top,  #bbb,  #fff); /* for opera */
+	}
+	
+	.button {
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	}
+	
+	#goButton {
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-webkit-border-top-left-radius: 0em;
+	-webkit-border-top-right-radius: 0.5em;
+	-webkit-border-bottom-right-radius: 0.5em;
+	-webkit-border-bottom-left-radius: 0em;
+	-moz-border-top-left-radius: 0em;
+	-moz-border-top-right-radius: 0.5em;
+	-moz-border-bottom-right-radius: 0.5em;
+	-moz-border-bottom-left-radius: 0em;
+	border-top-left-radius: 0em;
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	border-bottom-left-radius: 0em;
+	}
+	
+	#goButton:active {
+    
+	background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#fff)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #bbb,  #fff); /* for firefox 3.6+ */
+	}
+	
+	#selfentry {
+    border: 1px solid #d1d1d1;
+    font: 38px Droid Sans;
+    color: #bebebe;
+    width: 260px;
+    padding: 6px 15px 6px 15px;
+    -webkit-border-radius: 20px 0px 0px 20px;
+    -moz-border-radius: 20px 0px 0px 20px;
+    border-radius: 20px 0px 0px 20px;
+    text-shadow: 0 5px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    }
+	
+	#mask {
+    position:fixed; 
+    top:0; 
+    left:0; 
+    right:0; 
+    bottom:0; 
+    background-image: url(resources/img/white_grid_paper-background_pattern.jpg);
+    visibility:hidden;
+    z-index:99;
+	}
+	
+	#noLocError {
+	color: red;
+	font-weight: bolder;
+	visibility: hidden;
+	display: block;
+	}
+	
+	#noSelfEntryError {
+	color: red;
+	font-weight: bolder;
+	}
+	
+	#searchradiuscontainer {
+	width: 340px;
+	margin-top: 14px;
+	}
+	
+	#green {
+	color: green;
+	}
+	
+	#misc_links {
+	font-family: 'Raleway';
+	font-size:100%;
+	width: 800px;
+	margin-left: 0em;
+	padding-top: 28em;
+	text-align: left;
+	}
+	
+	#about {
+	margin-right: 1em;
+	}
+	
+	#privacy {
+	margin-right: 2.0em;
+	}
+	
+	.plainLink {
+	text-decoration: none;
+	}
+	
+	.plainLink:hover {
+	text-decoration: underline;
+	}
+	
+	.plainLink:visited {
+	color: blue;
+	}
+	
+	#social_buttons {
+	margin-left: 0.3em;
+	}
+	
+	.twitter-share-button[style] {
+	vertical-align: text-bottom !important;
+	}
+	
+	#___plusone_0 {
+	vertical-align: text-bottom !important;
+	}
+	
