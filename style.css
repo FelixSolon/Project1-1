@@ -1,0 +1,8 @@
+.mystyle {
+    width: 100%;
+    padding: 25px;
+    background-color: coral;
+    color:black;
+    font-size: 25px;
+    box-sizing: border-box;
+}
