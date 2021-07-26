@@ -56,8 +56,9 @@ $(document).ready(function(){
     zipContainer.appendChild(zipP);
     zipContainer.appendChild(zipInput);
     zipContainer.appendChild(submitBtn);
-    // Hide Zip until Start Button clicked to call showZip function
-    $(zipContainer).hide();
+    function hideZip() {
+        $(zipContainer).hide();
+    }
     function showZip() {
         $(zipContainer).show()
     }
@@ -65,5 +66,6 @@ $(document).ready(function(){
         hideIntro();
         showZip();
     });
-
+    // Hide Zip until Start Button clicked to call showZip function
+    hideZip();
 });
