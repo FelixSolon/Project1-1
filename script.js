@@ -18,9 +18,10 @@ $(document).ready(function(){
     // This is for the start button
     var startBtn = document.createElement('button');
     $(startBtn).attr('id', "start");
+    // Add css class for button from Bulma CSS framework
+    $(startBtn).addClass("button is-info");
     introP.innerHTML = "This application allows you to randomly generate a restaurant in your area when you are having a hard time choosing where to eat." + "<br/>" + "To use this app, enter your zip code on the next page and answer the following questions.";
-    // Add the style class for the button to the anchor tag
-    startBtn.innerHTML = `<a>START</a>`;
+    startBtn.innerHTML = "START";
     // Adds elements to HTML
     body.append(introContainer);
     introContainer.appendChild(introP);
@@ -49,13 +50,43 @@ $(document).ready(function(){
     // This is for the zip code submit button
     var submitBtn = document.createElement('button');
     $(submitBtn).attr('id', "zip-button");
-    // Add css class like START button
-    submitBtn.innerHTML = `<a>SUBMIT</a>`
+    $(submitBtn).addClass("button is-info");
+    submitBtn.innerHTML = "SUBMIT";
     // Add elements to HTML
     body.append(zipContainer);
     zipContainer.appendChild(zipP);
     zipContainer.appendChild(zipInput);
     zipContainer.appendChild(submitBtn);
+
+    // // Container for the criteria questions
+    // var questionContainer = document.createElement('div');
+    // $(questionContainer).attr('id', "question-container");
+    // // Add css class for container here
+    // $(questionContainer).addClass("");
+    // var question = document.createElement('p');
+    // var answerBtn1 = document.createElement('button');
+    // var answerBtn2 = document.createElement('button');
+    // var answerBtn3 = document.createElement('button');
+    // var answerBtn4 = document.createElement('button');
+
+    // var question = document.createElement('p');
+    // var answerBtn1 = document.createElement('button');
+    // var answerBtn2 = document.createElement('button');
+    // var answerBtn3 = document.createElement('button');
+    // var answerBtn4 = document.createElement('button');
+
+    // var question = document.createElement('p');
+    // var answerBtn1 = document.createElement('button');
+    // var answerBtn2 = document.createElement('button');
+    // var answerBtn3 = document.createElement('button');
+    // var answerBtn4 = document.createElement('button');
+
+    // var question = document.createElement('p');
+    // var answerBtn1 = document.createElement('button');
+    // var answerBtn2 = document.createElement('button');
+    // var answerBtn3 = document.createElement('button');
+    // var answerBtn4 = document.createElement('button');
+
     function hideZip() {
         $(zipContainer).hide();
     }
