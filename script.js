@@ -66,6 +66,9 @@ $(document).ready(function(){
         hideIntro();
         showZip();
     });
+    $(submitBtn).on('click', function () {
+        hideZip();
+    });
     // Hide Zip until Start Button clicked to call showZip function
     hideZip();
 });
