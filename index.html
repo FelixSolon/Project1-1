@@ -13,6 +13,7 @@
         Restaurant Cuisine: <span id="sine"></span>
         <!-- Restaurant Menu Items: <span id="menu"></span> -->
     </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         // Have a function that compares key words to items in the menu arrays
         // API for restuarants and menus by zip code
@@ -26,7 +27,7 @@
                 }
             });
             console.log(response);
-            
+            var restaurants = 0;
             const totalRestaurants = await response.json();
             console.log(totalRestaurants);
             const restName = totalRestaurants.data[1].restaurant_name;
@@ -38,17 +39,46 @@
             // console.log(restZipCode);
             const restMenu = totalRestaurants.data[1].menus;
             console.log(restMenu);
-            const restCuisine = totalRestaurants.data[1].cuisines;
-            console.log(restCuisine);
+            // const restCuisine = totalRestaurants.data[1].cuisines;
+            
             // const menuItems = totalRestaurants.data[1].menus[0].menu_sections[0];
             // console.log(menuItems);
+            var restCuisine = [];
+            for (var i = 0; i < totalRestaurants.data.length; i++) {
+                var currentRestaurant = totalRestaurants.data[i];
+                restCuisine = restCuisine.concat(currentRestaurant.cuisines);
+                for (var z = 0; z < currentRestaurant.cuisines.length; z++) {
+                    if (currentRestaurant.cuisines[z] != '') {
+                        document.querySelector('#sine').innerHTML += `<button class="cuisine">${currentRestaurant.cuisines[z]}</button>`;
+                    }
+                }
+            }
+            console.log(restCuisine);
 
             document.querySelector('#name').innerHTML = restName;
             document.querySelector('#address').innerHTML = restAddress;
-            document.querySelector('#sine').innerHTML = restCuisine;
+            // document.querySelector('#sine').innerHTML = restCuisine;
             // document.querySelector('#menu').innerHTML = menuItems;
+            $('.cuisine').on('click', function (e) {
+                selectedCuisine(e.target.innerText);
+            });
+            function selectedCuisine(cuisine) {
+                console.log(cuisine);
+                for (var i = 0; i < totalRestaurants.data.length; i++) {
+                var currentRestaurant = totalRestaurants.data[i];
+                restCuisine = restCuisine.concat(currentRestaurant.cuisines);
+                if (currentRestaurant.cuisines.includes(cuisine)) {
+                    
+                }
+            
+            }
+                // clear all cuisine buttons after button click clear HTML of container
+                // look through total restaurants list to match picked cuisine with for loop
+                // show them the restaurant
+                // maybe add menu items
+            }
         }
-        
+
         getData();        
         
         // Use to get current location
@@ -61,5 +91,6 @@
         //     console.log('geolocation not available');
         // }
     </script>
+
     </body>
 </html>
