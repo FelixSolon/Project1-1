@@ -58,35 +58,6 @@ $(document).ready(function(){
     zipContainer.appendChild(zipInput);
     zipContainer.appendChild(submitBtn);
 
-    // // Container for the criteria questions
-    // var questionContainer = document.createElement('div');
-    // $(questionContainer).attr('id', "question-container");
-    // // Add css class for container here
-    // $(questionContainer).addClass("");
-    // var question = document.createElement('p');
-    // var answerBtn1 = document.createElement('button');
-    // var answerBtn2 = document.createElement('button');
-    // var answerBtn3 = document.createElement('button');
-    // var answerBtn4 = document.createElement('button');
-
-    // var question = document.createElement('p');
-    // var answerBtn1 = document.createElement('button');
-    // var answerBtn2 = document.createElement('button');
-    // var answerBtn3 = document.createElement('button');
-    // var answerBtn4 = document.createElement('button');
-
-    // var question = document.createElement('p');
-    // var answerBtn1 = document.createElement('button');
-    // var answerBtn2 = document.createElement('button');
-    // var answerBtn3 = document.createElement('button');
-    // var answerBtn4 = document.createElement('button');
-
-    // var question = document.createElement('p');
-    // var answerBtn1 = document.createElement('button');
-    // var answerBtn2 = document.createElement('button');
-    // var answerBtn3 = document.createElement('button');
-    // var answerBtn4 = document.createElement('button');
-
     function hideZip() {
         $(zipContainer).hide();
     }
@@ -99,7 +70,73 @@ $(document).ready(function(){
     });
     $(submitBtn).on('click', function () {
         hideZip();
+        // this calls the API to start
+        // getData();
     });
     // Hide Zip until Start Button clicked to call showZip function
     hideZip();
 });
+// Have a function that compares key words to items in the menu arrays
+// API for restuarants and menus by zip code
+// const api_url = "https://api.documenu.com/v2/restaurants/zip_code/33773?size=20&fullmenu=true&top_cuisines=false&key=fe622a5ac3aa4f64e60a0ab9c844306d";
+// async function getData() {
+//     const response = await fetch(api_url, {
+//         "method": "GET",
+//         "headers": {
+//             "x-api-key": "fe622a5ac3aa4f64e60a0ab9c844306d",
+//             "x-rapidapi-host": "documenu.p.rapidapi.com"
+//         }
+//     });
+//     console.log(response);
+//     var restaurants = 0;
+//     const totalRestaurants = await response.json();
+//     console.log(totalRestaurants);
+//     const restName = totalRestaurants.data[1].restaurant_name;
+//     console.log(restName);
+//     // zip code is postal_code for restaurant data
+//     const restAddress = totalRestaurants.data[1].address.formatted;
+//     console.log(restAddress);
+//     // const restZipCode = totalRestaurants.data[1].address.postal_code;
+//     // console.log(restZipCode);
+//     const restMenu = totalRestaurants.data[1].menus;
+//     console.log(restMenu);
+//     // const restCuisine = totalRestaurants.data[1].cuisines;
+    
+//     // const menuItems = totalRestaurants.data[1].menus[0].menu_sections[0];
+//     // console.log(menuItems);
+//     var restCuisine = [];
+//     for (var i = 0; i < totalRestaurants.data.length; i++) {
+//         var currentRestaurant = totalRestaurants.data[i];
+//         restCuisine = restCuisine.concat(currentRestaurant.cuisines);
+//         for (var z = 0; z < currentRestaurant.cuisines.length; z++) {
+//             if (currentRestaurant.cuisines[z] != '') {
+//                 document.querySelector('#sine').innerHTML += `<button class="cuisine">${currentRestaurant.cuisines[z]}</button>`;
+//             }
+//         }
+//     }
+//     console.log(restCuisine);
+
+//     document.querySelector('#name').innerHTML = restName;
+//     document.querySelector('#address').innerHTML = restAddress;
+//     // document.querySelector('#sine').innerHTML = restCuisine;
+//     // document.querySelector('#menu').innerHTML = menuItems;
+//     $('.cuisine').on('click', function (e) {
+//         selectedCuisine(e.target.innerText);
+//         $('.cuisine').hide();
+//     });
+//     function selectedCuisine(cuisine) {
+//         console.log(cuisine);
+//         for (var i = 0; i < totalRestaurants.data.length; i++) {
+//         var currentRestaurant = totalRestaurants.data[i];
+//         restCuisine = restCuisine.concat(currentRestaurant.cuisines);
+//         if (currentRestaurant.cuisines.includes(cuisine)) {
+//             console.log(cuisine);
+//         }
+    
+//     }
+//         // clear all cuisine buttons after button click clear HTML of container
+//         // look through total restaurants list to match picked cuisine with for loop
+//         // show them the restaurant
+//         // maybe add menu items
+//     }
+// }
