@@ -9,8 +9,12 @@ $(document).ready(function(){
     var introContainer = document.createElement('div');
     $(introContainer).attr('id', 'intro-container');
     // add css class for container
+<<<<<<< HEAD
     $(introContainer).addClass("introStyle");
 
+=======
+    $(introContainer).addClass("");
+>>>>>>> 3a05415d08d632cb34e5a045a0965573453d4227
     // This is for the intro paragraph
     var introP = document.createElement('p');
     $(introP).attr('id', "intro");
@@ -19,10 +23,17 @@ $(document).ready(function(){
     // This is for the start button
     var startBtn = document.createElement('button');
     $(startBtn).attr('id', "start");
+<<<<<<< HEAD
     $(startBtn).addClass('button is-info');
     introP.innerHTML = "This application allows you to randomly generate a restaurant in your area when you are having a hard time choosing where to eat." + "<br/>" + "To use this app, enter your zip code on the next page and answer the following questions.";
     // Add the style class for the button to the anchor tag
     startBtn.innerHTML = 'START';
+=======
+    // Add css class for button from Bulma CSS framework
+    $(startBtn).addClass("button is-info");
+    introP.innerHTML = "This application allows you to randomly generate a restaurant in your area when you are having a hard time choosing where to eat." + "<br/>" + "To use this app, enter your zip code on the next page and answer the following questions.";
+    startBtn.innerHTML = "START";
+>>>>>>> 3a05415d08d632cb34e5a045a0965573453d4227
     // Adds elements to HTML
     body.append(introContainer);
     introContainer.appendChild(introP);
@@ -51,13 +62,22 @@ $(document).ready(function(){
     // This is for the zip code submit button
     var submitBtn = document.createElement('button');
     $(submitBtn).attr('id', "zip-button");
+<<<<<<< HEAD
     // Add css class like START button
     submitBtn.innerHTML = `<a>SUBMIT</a>`
+=======
+    $(submitBtn).addClass("button is-info");
+    submitBtn.innerHTML = "SUBMIT";
+>>>>>>> 3a05415d08d632cb34e5a045a0965573453d4227
     // Add elements to HTML
     body.append(zipContainer);
     zipContainer.appendChild(zipP);
     zipContainer.appendChild(zipInput);
     zipContainer.appendChild(submitBtn);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3a05415d08d632cb34e5a045a0965573453d4227
     function hideZip() {
         $(zipContainer).hide();
     }
@@ -68,6 +88,81 @@ $(document).ready(function(){
         hideIntro();
         showZip();
     });
+<<<<<<< HEAD
     // Hide Zip until Start Button clicked to call showZip function
     hideZip();
 });
+=======
+    $(submitBtn).on('click', function () {
+        hideZip();
+        // this calls the API to start
+        // getData();
+    });
+    // Hide Zip until Start Button clicked to call showZip function
+    hideZip();
+});
+// Have a function that compares key words to items in the menu arrays
+// API for restuarants and menus by zip code
+// const api_url = "https://api.documenu.com/v2/restaurants/zip_code/33773?size=20&fullmenu=true&top_cuisines=false&key=fe622a5ac3aa4f64e60a0ab9c844306d";
+// async function getData() {
+//     const response = await fetch(api_url, {
+//         "method": "GET",
+//         "headers": {
+//             "x-api-key": "fe622a5ac3aa4f64e60a0ab9c844306d",
+//             "x-rapidapi-host": "documenu.p.rapidapi.com"
+//         }
+//     });
+//     console.log(response);
+//     var restaurants = 0;
+//     const totalRestaurants = await response.json();
+//     console.log(totalRestaurants);
+//     const restName = totalRestaurants.data[1].restaurant_name;
+//     console.log(restName);
+//     // zip code is postal_code for restaurant data
+//     const restAddress = totalRestaurants.data[1].address.formatted;
+//     console.log(restAddress);
+//     // const restZipCode = totalRestaurants.data[1].address.postal_code;
+//     // console.log(restZipCode);
+//     const restMenu = totalRestaurants.data[1].menus;
+//     console.log(restMenu);
+//     // const restCuisine = totalRestaurants.data[1].cuisines;
+    
+//     // const menuItems = totalRestaurants.data[1].menus[0].menu_sections[0];
+//     // console.log(menuItems);
+//     var restCuisine = [];
+//     for (var i = 0; i < totalRestaurants.data.length; i++) {
+//         var currentRestaurant = totalRestaurants.data[i];
+//         restCuisine = restCuisine.concat(currentRestaurant.cuisines);
+//         for (var z = 0; z < currentRestaurant.cuisines.length; z++) {
+//             if (currentRestaurant.cuisines[z] != '') {
+//                 document.querySelector('#sine').innerHTML += `<button class="cuisine">${currentRestaurant.cuisines[z]}</button>`;
+//             }
+//         }
+//     }
+//     console.log(restCuisine);
+
+//     document.querySelector('#name').innerHTML = restName;
+//     document.querySelector('#address').innerHTML = restAddress;
+//     // document.querySelector('#sine').innerHTML = restCuisine;
+//     // document.querySelector('#menu').innerHTML = menuItems;
+//     $('.cuisine').on('click', function (e) {
+//         selectedCuisine(e.target.innerText);
+//         $('.cuisine').hide();
+//     });
+//     function selectedCuisine(cuisine) {
+//         console.log(cuisine);
+//         for (var i = 0; i < totalRestaurants.data.length; i++) {
+//         var currentRestaurant = totalRestaurants.data[i];
+//         restCuisine = restCuisine.concat(currentRestaurant.cuisines);
+//         if (currentRestaurant.cuisines.includes(cuisine)) {
+//             console.log(cuisine);
+//         }
+    
+//     }
+//         // clear all cuisine buttons after button click clear HTML of container
+//         // look through total restaurants list to match picked cuisine with for loop
+//         // show them the restaurant
+//         // maybe add menu items
+//     }
+// }
+>>>>>>> 3a05415d08d632cb34e5a045a0965573453d4227
