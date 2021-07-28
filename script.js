@@ -9,7 +9,7 @@ $(document).ready(function(){
     var introContainer = document.createElement('div');
     $(introContainer).attr('id', 'intro-container');
     // add css class for container
-    $(introContainer).addClass("");
+    $(introContainer).addClass("column notification");
     // This is for the intro paragraph
     var introP = document.createElement('p');
     $(introP).attr('id', "intro");
@@ -19,7 +19,7 @@ $(document).ready(function(){
     var startBtn = document.createElement('button');
     $(startBtn).attr('id', "start");
     // Add css class for button from Bulma CSS framework
-    $(startBtn).addClass("button is-info");
+    $(startBtn).addClass('button is-info is-link');
     introP.innerHTML = "This application allows you to randomly generate a restaurant in your area when you are having a hard time choosing where to eat." + "<br/>" + "To use this app, enter your zip code on the next page and answer the following questions.";
     startBtn.innerHTML = "START";
     // Adds elements to HTML
@@ -40,13 +40,13 @@ $(document).ready(function(){
     var zipP = document.createElement('p');
     $(zipP).attr('id', "zip-text");
     // Add css class here
-    $(zipP).addClass("");
+    $(zipP).addClass("is-info is-link");
     zipP.innerText = "Please enter your ZIP CODE.";
     // This is for the text input field for the zip code
     var zipInput = document.createElement('textarea');
     $(zipInput).attr('id', "zip-input");
     // Add css class for input box
-    $(zipInput).addClass("");
+    $(zipInput).addClass('column is-3 input is-small');
     // This is for the zip code submit button
     var submitBtn = document.createElement('button');
     $(submitBtn).attr('id', "zip-button");
@@ -57,7 +57,6 @@ $(document).ready(function(){
     zipContainer.appendChild(zipP);
     zipContainer.appendChild(zipInput);
     zipContainer.appendChild(submitBtn);
-
     function hideZip() {
         $(zipContainer).hide();
     }
